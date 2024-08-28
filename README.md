@@ -11,6 +11,14 @@ This project is based on the Cooley-Tukey FFT algorithm, one of the most well-kn
 - **CUDA Implementation**: The core FFT algorithm is implemented in CUDA C++ for execution on NVIDIA GPUs.
 - **Efficient Multiplication**: The application can multiply very large integers in $O(N \ \log \ N)$ time using FFT.
 - **Validation**: The implementation includes validation scripts to verify correctness using randomly generated and concatenated test cases.
+- **Optimization**: Optimizations including memory coalescing, thread coarsening, and the use of shared memory, were considered and applied where possible.
+
+## Project Structure
+
+- `src/fft.cu`: The main CUDA C++ implementation of the FFT algorithm.
+- `src/fft.ipynb`: Jupyter notebook (Google Colab) that demonstrates the CUDA C++ implementation and validates its correctness.
+- `src/secondary/fft.py`: Python implementation of the FFT algorithm.
+- `bin/fft`: Compiled binary for running the FFT multiplication (generated after compilation; not included by git).
 
 ## Dependencies
 
@@ -63,13 +71,6 @@ To validate the correctness of the FFT implementation, you can run the provided 
 ```
 
 Alternatively, you can directly explore the Jupyter notebook `src/fft.ipynb`, which explains the implementation and validates its correctness.
-
-## Project Structure
-
-- `src/fft.cu`: The main CUDA implementation of the FFT algorithm.
-- `src/fft.ipynb`: Jupyter notebook that explains the implementation and validates its correctness.
-- `src/secondary/fft.py`: Python implementation of the FFT algorithm.
-- `bin/fft`: Compiled binary for running the FFT multiplication (generated after compilation; not included by git).
 
 ## Limitations
 
